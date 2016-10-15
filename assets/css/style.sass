@@ -1,0 +1,250 @@
+
+/*Color Initialization*/
+$main-color: #10163e
+$main-trans: all 0.6s ease-in-out
+
+/*Fonts*/
+@font-face
+  font-family: "Roboto"
+  src: url("../fonts/Roboto-Regular.ttf") format('truetype')
+@font-face
+  font-family: "Roboto-Bold"
+  src: url("../fonts/Roboto-Bold.ttf") format('truetype')
+@font-face
+  font-family: "Roboto-Light"
+  src: url("../fonts/Roboto-Light.ttf") format('truetype')
+
+@font-face
+  font-family: "Lato"
+  src: url("../fonts/Lato-Regular.ttf") format('truetype')
+@font-face
+  font-family: "Lato-Bold"
+  src: url("../fonts/Lato-Bold.ttf") format('truetype')
+@font-face
+  font-family: "Lato-Light"
+  src: url("../fonts/Lato-Light.ttf") format('truetype')
+@font-face
+  font-family: "Lato-Thin"
+  src: url("../fonts/Lato-Thin.ttf") format('truetype')
+
+html
+  height: 100%
+body
+  height: 100%
+  font-family: "Lato"
+
+a
+  color: white
+  &:hover
+    text-decoration: none
+
+/*Buttons*/
+.btn
+  margin-top: 30px
+  font-size: 16px
+  padding: 4px 7px
+  &.btn-default
+    background-color: rgba(255,255,255,0.3)
+    border: 0
+    color: white
+    &:hover
+      background-color: transparent
+      border: 1px solid white
+  &.btn-carousel
+    background-color: rgba(255,255,255,0.3)
+    border-color: rgba(255,255,255,0.3)
+    font-family: "Lato-Light"
+    &:hover
+      background-color: transparent
+      color: white
+
+/*Universal Class*/
+.no-padding
+  padding: 0
+
+/*Navigation Bar*/
+.navbar
+  background-color: transparent
+  margin: 0
+  border-radius: 0
+  border: 0
+  font-family: "Roboto"
+  text-transform: uppercase
+  transition: $main-trans
+  .navbar-brand
+    img
+      width: 100px
+      transition: $main-trans
+  ul.navbar-nav
+    li
+      padding: 15px
+      transition: $main-trans
+      a.level-one
+        padding: 10px
+        border: 1px transparent solid
+        border-radius: 5px
+        color: white
+      &:hover, &.active
+        a.level-one
+          border: 1px white solid
+          background-color: transparent
+          color: white
+      & > .dropdown-menu
+        border-radius: 5px
+      & ul li
+        padding: 0
+        font-family: "Roboto-Light"
+        font-size: 12px
+  &.scrolled
+    background-color: rgba(0,0,0,0.7)
+    .navbar-brand
+      img
+        width: 70px
+    ul.navbar-nav
+      li
+        padding-top: 5px
+        padding-bottom: 5px
+        a
+          font-family: "Roboto-Light"
+        &:hover, &.active
+          a.level-one
+            background-color: transparent
+            border: 0
+            font-family: "Roboto-Bold"
+.navbar-default
+  .navbar-nav
+    > .open
+      > a, > a:focus, > a:after
+        border: 1px white solid
+        background-color: transparent
+        color: white
+
+
+/*Slider*/
+.carousel, .item, .active
+  height: 100%
+.carousel-inner
+  height: 100%
+  .fill
+    width: 100%
+    height: 100%
+    background-position: center
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    background-size: cover
+    -o-background-size: cover
+  .item::before
+    display: block
+    position: absolute
+    top: 0
+    content: " "
+    width: 100%
+    height: 100%
+    background:
+      image: url('../img/filter.png')
+      repeat: repeat
+  .carousel-caption
+    top: 30%
+    text-shadow: none
+    h1, h2
+      font-family: "Lato-Thin"
+      margin-bottom: 30px
+    h4, h5
+      font-family: "Lato"
+.carousel-control
+  background-image: none !important
+  width: 2%
+  text-shadow: none
+  &:hover
+    background-image: none
+  .prev-btn
+    position: absolute
+    top: 50%
+    left: 0
+    z-index: 5
+    margin-top: -10px
+    padding: 20px 10px 15px 5px
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+    background-color: rgba(255,255,255,0.5)
+    font-size: 20px
+    color: #333
+  .next-btn
+    position: absolute
+    top: 50%
+    right: 0
+    z-index: 5
+    margin-top: -10px
+    padding: 20px 5px 15px 10px
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+    background-color: rgba(255,255,255,0.5)
+    font-size: 20px
+    color: #333
+
+/*Contents*/
+.content-wrapper
+  position: relative
+  background: white
+  margin: 0
+  padding: 0
+  .box-content
+    padding: 50px 0
+    width: 100%
+    height: 100%
+  .full-content
+    padding: 0
+    width: 100%
+    height: 100%
+  .content-title
+    margin-bottom: 50px
+    h1.title
+      margin-top: 0
+      text-align: center
+      font-family: "Lato-Light"
+    h5.subtitle
+      display: block
+      margin: auto
+      max-width: 480px
+      text-align: center
+      font-family: "Roboto"
+  .content
+    .segment
+      &.segment-left
+        text-align: left
+      &.segment-center
+        text-align: center
+      &.segment-right
+        text-align: right
+      .fa.icon-feature
+        font-size: 55px
+        color: $main-color
+      p
+        font-size: 12px
+  .featured-wrapper
+    .featured-single
+      overflow: hidden
+      background-color: $main-color
+      img
+        opacity: 0.7
+        transition: $main-trans
+      &:hover img
+        opacity: 0.2
+      .featured-caption
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+        padding: 20% 20px 0
+        color: white
+        text-align: center
+        opacity: 0
+        z-index: 10
+        transition: $main-trans
+        .caption
+          font-family: "Lato-Light"
+        .subcaption
+          font-family: "Lato"
+          font-size: 14px
+      &:hover .featured-caption
+        opacity: 1

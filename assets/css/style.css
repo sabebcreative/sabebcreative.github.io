@@ -1,0 +1,341 @@
+/*Color Initialization*/
+/*Fonts*/
+@font-face {
+		font-family: "Roboto";
+		src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+		font-family: "Roboto-Bold";
+		src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+		font-family: "Roboto-Light";
+		src: url("../fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+		font-family: "Lato";
+		src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+
+@font-face {
+		font-family: "Lato-Bold";
+		src: url("../fonts/Lato-Bold.ttf") format("truetype");
+}
+
+@font-face {
+		font-family: "Lato-Light";
+		src: url("../fonts/Lato-Light.ttf") format("truetype");
+}
+
+@font-face {
+		font-family: "Lato-Thin";
+		src: url("../fonts/Lato-Thin.ttf") format("truetype");
+}
+
+html {
+		height: 100%;
+}
+
+body {
+		height: 100%;
+		font-family: "Lato";
+}
+
+a {
+		color: white;
+}
+
+a:hover {
+		text-decoration: none;
+}
+
+/*Buttons*/
+.btn {
+		margin-top: 30px;
+		font-size: 16px;
+		padding: 4px 7px;
+}
+
+.btn.btn-default {
+		background-color: rgba(255, 255, 255, 0.3);
+		border: 0;
+		color: white;
+}
+
+.btn.btn-default:hover {
+		background-color: transparent;
+		border: 1px solid white;
+}
+
+.btn.btn-carousel {
+		background-color: rgba(255, 255, 255, 0.3);
+		border-color: rgba(255, 255, 255, 0.3);
+		font-family: "Lato-Light";
+}
+
+.btn.btn-carousel:hover {
+		background-color: transparent;
+		color: white;
+}
+
+/*Universal Class*/
+.no-padding {
+		padding: 0;
+}
+
+/*Navigation Bar*/
+.navbar {
+		background-color: transparent;
+		margin: 0;
+		border-radius: 0;
+		border: 0;
+		font-family: "Roboto";
+		text-transform: uppercase;
+		transition: all 0.6s ease-in-out;
+}
+
+.navbar .navbar-brand img {
+		width: 100px;
+		transition: all 0.6s ease-in-out;
+}
+
+.navbar ul.navbar-nav li {
+		padding: 15px;
+		transition: all 0.6s ease-in-out;
+}
+
+.navbar ul.navbar-nav li a.level-one {
+		padding: 10px;
+		border: 1px transparent solid;
+		border-radius: 5px;
+		color: white;
+}
+
+.navbar ul.navbar-nav li:hover a.level-one, .navbar ul.navbar-nav li.active a.level-one {
+		border: 1px white solid;
+		background-color: transparent;
+		color: white;
+}
+
+.navbar ul.navbar-nav li > .dropdown-menu {
+		border-radius: 5px;
+}
+
+.navbar ul.navbar-nav li ul li {
+		padding: 0;
+		font-family: "Roboto-Light";
+		font-size: 12px;
+}
+
+.navbar.scrolled {
+		background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar.scrolled .navbar-brand img {
+		width: 70px;
+}
+
+.navbar.scrolled ul.navbar-nav li {
+		padding-top: 5px;
+		padding-bottom: 5px;
+}
+
+.navbar.scrolled ul.navbar-nav li a {
+		font-family: "Roboto-Light";
+}
+
+.navbar.scrolled ul.navbar-nav li:hover a.level-one, .navbar.scrolled ul.navbar-nav li.active a.level-one {
+		background-color: transparent;
+		border: 0;
+		font-family: "Roboto-Bold";
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:after {
+		border: 1px white solid;
+		background-color: transparent;
+		color: white;
+}
+
+/*Slider*/
+.carousel, .item, .active {
+		height: 100%;
+}
+
+.carousel-inner {
+		height: 100%;
+}
+
+.carousel-inner .fill {
+		width: 100%;
+		height: 100%;
+		background-position: center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		-o-background-size: cover;
+}
+
+.carousel-inner .item::before {
+		display: block;
+		position: absolute;
+		top: 0;
+		content: " ";
+		width: 100%;
+		height: 100%;
+		background-image: url("../img/filter.png");
+		background-repeat: repeat;
+}
+
+.carousel-inner .carousel-caption {
+		top: 30%;
+		text-shadow: none;
+}
+
+.carousel-inner .carousel-caption h1, .carousel-inner .carousel-caption h2 {
+		font-family: "Lato-Thin";
+		margin-bottom: 30px;
+}
+
+.carousel-inner .carousel-caption h4, .carousel-inner .carousel-caption h5 {
+		font-family: "Lato";
+}
+
+.carousel-control {
+		background-image: none !important;
+		width: 2%;
+		text-shadow: none;
+}
+
+.carousel-control:hover {
+		background-image: none;
+}
+
+.carousel-control .prev-btn {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		z-index: 5;
+		margin-top: -10px;
+		padding: 20px 10px 15px 5px;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		background-color: rgba(255, 255, 255, 0.5);
+		font-size: 20px;
+		color: #333;
+}
+
+.carousel-control .next-btn {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		z-index: 5;
+		margin-top: -10px;
+		padding: 20px 5px 15px 10px;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		background-color: rgba(255, 255, 255, 0.5);
+		font-size: 20px;
+		color: #333;
+}
+
+/*Contents*/
+.content-wrapper {
+		position: relative;
+		background: white;
+		margin: 0;
+		padding: 0;
+}
+
+.content-wrapper .box-content {
+		padding: 50px 0;
+		width: 100%;
+		height: 100%;
+}
+
+.content-wrapper .full-content {
+		padding: 0;
+		width: 100%;
+		height: 100%;
+}
+
+.content-wrapper .content-title {
+		margin-bottom: 50px;
+}
+
+.content-wrapper .content-title h1.title {
+		margin-top: 0;
+		text-align: center;
+		font-family: "Lato-Light";
+}
+
+.content-wrapper .content-title h5.subtitle {
+		display: block;
+		margin: auto;
+		max-width: 480px;
+		text-align: center;
+		font-family: "Roboto";
+}
+
+.content-wrapper .content .segment.segment-left {
+		text-align: left;
+}
+
+.content-wrapper .content .segment.segment-center {
+		text-align: center;
+}
+
+.content-wrapper .content .segment.segment-right {
+		text-align: right;
+}
+
+.content-wrapper .content .segment .fa.icon-feature {
+		font-size: 55px;
+		color: #10163e;
+}
+
+.content-wrapper .content .segment p {
+		font-size: 12px;
+}
+
+.content-wrapper .featured-wrapper .featured-single {
+		overflow: hidden;
+		background-color: #10163e;
+}
+
+.content-wrapper .featured-wrapper .featured-single img {
+		opacity: 0.7;
+		transition: all 0.6s ease-in-out;
+}
+
+.content-wrapper .featured-wrapper .featured-single:hover img {
+		opacity: 0.2;
+}
+
+.content-wrapper .featured-wrapper .featured-single .featured-caption {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding: 20% 20px 0;
+		color: white;
+		text-align: center;
+		opacity: 0;
+		z-index: 10;
+		transition: all 0.6s ease-in-out;
+}
+
+.content-wrapper .featured-wrapper .featured-single .featured-caption .caption {
+		font-family: "Lato-Light";
+}
+
+.content-wrapper .featured-wrapper .featured-single .featured-caption .subcaption {
+		font-family: "Lato";
+		font-size: 14px;
+}
+
+.content-wrapper .featured-wrapper .featured-single:hover .featured-caption {
+		opacity: 1;
+}
