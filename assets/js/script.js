@@ -16,7 +16,7 @@ $(function() {
 });
 
 //Scrolling Navbar
-$(window).scroll(function(){
+$(window).scroll(function() {
 
   var Scroll = $(this).scrollTop();
 
@@ -26,4 +26,13 @@ $(window).scroll(function(){
     $('.navbar').removeClass('scrolled');
   };
 
+});
+
+//Counting Child and determine sort button length
+$(function() {
+  var count = $("ul.horizontal").children().length;
+  console.log(count);
+  var length = 100/count + '%';
+  console.log(length);
+  $("ul.horizontal .li").width(length);
 });

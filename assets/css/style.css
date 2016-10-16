@@ -61,13 +61,23 @@ a:hover {
 
 .btn.btn-default {
 		background-color: rgba(255, 255, 255, 0.3);
-		border: 0;
+		border: 1px solid white;
 		color: white;
 }
 
 .btn.btn-default:hover {
 		background-color: transparent;
-		border: 1px solid white;
+}
+
+.btn.btn-invert {
+		background-color: rgba(255, 255, 255, 0.3);
+		border: 1px solid #333;
+		color: #333;
+}
+
+.btn.btn-invert:hover {
+		background-color: #10163e;
+		color: white;
 }
 
 .btn.btn-carousel {
@@ -81,9 +91,43 @@ a:hover {
 		color: white;
 }
 
+.btn.btn-sort {
+		width: 100%;
+		margin-top: 0;
+}
+
+.btn.btn-sort:hover, .btn.btn-sort.active {
+		background-color: #10163e;
+		color: white;
+}
+
+.btn.btn-full {
+		display: block;
+		margin: auto;
+		width: 100%;
+}
+
+.btn.btn-center {
+		display: block;
+		margin: auto;
+		max-width: 100px;
+}
+
 /*Universal Class*/
 .no-padding {
 		padding: 0;
+}
+
+ul.horizontal {
+		list-style: none;
+		display: flex;
+		padding: 0;
+}
+
+ul.horizontal li {
+		display: inline-block;
+		flex-grow: 1;
+		padding: 0 5px;
 }
 
 /*Navigation Bar*/
@@ -147,10 +191,16 @@ a:hover {
 		font-family: "Roboto-Light";
 }
 
-.navbar.scrolled ul.navbar-nav li:hover a.level-one, .navbar.scrolled ul.navbar-nav li.active a.level-one {
+.navbar.scrolled ul.navbar-nav li:hover a.level-one, .navbar.scrolled ul.navbar-nav li:focus a.level-one, .navbar.scrolled ul.navbar-nav li.active a.level-one, .navbar.scrolled ul.navbar-nav li.open a.level-one {
 		background-color: transparent;
-		border: 0;
+		border: 0px !important;
 		font-family: "Roboto-Bold";
+}
+
+.navbar.scrolled ul.navbar-nav li ul li {
+		padding: 0;
+		font-family: "Roboto-Light";
+		font-size: 12px;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:after {
@@ -253,16 +303,38 @@ a:hover {
 		padding: 50px 0;
 		width: 100%;
 		height: 100%;
+		position: relative;
 }
 
 .content-wrapper .full-content {
 		padding: 0;
 		width: 100%;
 		height: 100%;
+		position: relative;
+}
+
+.content-wrapper .image-bg {
+		background-size: cover;
+		background-repeat: no-repeat;
+}
+
+.content-wrapper .image-bg::before {
+		display: block;
+		position: absolute;
+		top: 0;
+		content: " ";
+		width: 100%;
+		height: 100%;
+		background-color: #10163e;
+		opacity: 0.6;
 }
 
 .content-wrapper .content-title {
 		margin-bottom: 50px;
+}
+
+.content-wrapper .content-title.invert {
+		color: white;
 }
 
 .content-wrapper .content-title h1.title {
@@ -301,6 +373,7 @@ a:hover {
 }
 
 .content-wrapper .featured-wrapper .featured-single {
+		position: relative;
 		overflow: hidden;
 		background-color: #10163e;
 }
@@ -338,4 +411,57 @@ a:hover {
 
 .content-wrapper .featured-wrapper .featured-single:hover .featured-caption {
 		opacity: 1;
+}
+
+.content-wrapper .portofolio-wrapper {
+		padding: 30px 0;
+}
+
+.content-wrapper .portofolio-wrapper .portofolio-single {
+		position: relative;
+		margin-bottom: 30px;
+		overflow: hidden;
+		background-color: #10163e;
+}
+
+.content-wrapper .portofolio-wrapper .portofolio-single img {
+		opacity: 0.7;
+		transition: all 0.6s ease-in-out;
+}
+
+.content-wrapper .portofolio-wrapper .portofolio-single:hover img {
+		opacity: 0.2;
+}
+
+.content-wrapper .portofolio-wrapper .portofolio-single .portofolio-caption {
+		position: absolute;
+		bottom: 0;
+		margin: 0 0 10px 10px;
+		padding: 0 10px 0 0;
+		border-left: 8px solid white;
+		color: white;
+		text-align: right;
+		z-index: 10;
+		transform: translateY(125%);
+		transition: all 0.6s ease-in-out;
+}
+
+.content-wrapper .portofolio-wrapper .portofolio-single .portofolio-caption .caption {
+		font-family: "Lato";
+		margin-top: 0;
+}
+
+.content-wrapper .portofolio-wrapper .portofolio-single .portofolio-caption .caption:hover {
+		color: white;
+		text-decoration: underline;
+}
+
+.content-wrapper .portofolio-wrapper .portofolio-single .portofolio-caption .subcaption {
+		font-family: "Lato-Thin";
+		font-size: 12px;
+		margin: 0;
+}
+
+.content-wrapper .portofolio-wrapper .portofolio-single:hover .portofolio-caption {
+		transform: translateY(0);
 }

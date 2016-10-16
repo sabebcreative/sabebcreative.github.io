@@ -45,11 +45,17 @@ a
   padding: 4px 7px
   &.btn-default
     background-color: rgba(255,255,255,0.3)
-    border: 0
+    border: 1px solid white
     color: white
     &:hover
       background-color: transparent
-      border: 1px solid white
+  &.btn-invert
+    background-color: rgba(255,255,255,0.3)
+    border: 1px solid #333
+    color: #333
+    &:hover
+      background-color: $main-color
+      color: white
   &.btn-carousel
     background-color: rgba(255,255,255,0.3)
     border-color: rgba(255,255,255,0.3)
@@ -57,10 +63,34 @@ a
     &:hover
       background-color: transparent
       color: white
+  &.btn-sort
+    width: 100%
+    margin-top: 0
+    &:hover, &.active
+      background-color: $main-color
+      color: white
+  &.btn-full
+    display: block
+    margin: auto
+    width: 100%
+  &.btn-center
+    display: block
+    margin: auto
+    max-width: 100px
+
+
 
 /*Universal Class*/
 .no-padding
   padding: 0
+ul.horizontal
+  list-style: none
+  display: flex
+  padding: 0
+  li
+    display: inline-block
+    flex-grow: 1
+    padding: 0 5px
 
 /*Navigation Bar*/
 .navbar
@@ -106,11 +136,15 @@ a
         padding-bottom: 5px
         a
           font-family: "Roboto-Light"
-        &:hover, &.active
+        &:hover, &:focus, &.active, &.open
           a.level-one
             background-color: transparent
-            border: 0
+            border: 0px !important
             font-family: "Roboto-Bold"
+        & ul li
+          padding: 0
+          font-family: "Roboto-Light"
+          font-size: 12px
 .navbar-default
   .navbar-nav
     > .open
@@ -192,12 +226,29 @@ a
     padding: 50px 0
     width: 100%
     height: 100%
+    position: relative
   .full-content
     padding: 0
     width: 100%
     height: 100%
+    position: relative
+  .image-bg
+    background-size: cover
+    background-repeat: no-repeat
+    &::before
+      display: block
+      position: absolute
+      top: 0
+      content: " "
+      width: 100%
+      height: 100%
+      background:
+        color: $main-color
+      opacity: 0.6
   .content-title
     margin-bottom: 50px
+    &.invert
+      color: white
     h1.title
       margin-top: 0
       text-align: center
@@ -223,6 +274,7 @@ a
         font-size: 12px
   .featured-wrapper
     .featured-single
+      position: relative
       overflow: hidden
       background-color: $main-color
       img
@@ -248,3 +300,38 @@ a
           font-size: 14px
       &:hover .featured-caption
         opacity: 1
+  .portofolio-wrapper
+    padding: 30px 0
+    .portofolio-single
+      position: relative
+      margin-bottom: 30px
+      overflow: hidden
+      background-color: $main-color
+      img
+        opacity: 0.7
+        transition: $main-trans
+      &:hover img
+        opacity: 0.2
+      .portofolio-caption
+        position: absolute
+        bottom: 0
+        margin: 0 0 10px 10px
+        padding: 0 10px 0 0
+        border-left: 8px solid white
+        color: white
+        text-align: right
+        z-index: 10
+        transform: translateY(125%)
+        transition: $main-trans
+        .caption
+          font-family: "Lato"
+          margin-top: 0
+          &:hover
+            color: white
+            text-decoration: underline
+        .subcaption
+          font-family: "Lato-Thin"
+          font-size: 12px
+          margin: 0
+      &:hover .portofolio-caption
+        transform: translateY(0)
